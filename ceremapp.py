@@ -2,6 +2,8 @@ import plotly.express as px
 import streamlit as st
 
 st.set_page_config(page_title="CEREM-APP", page_icon="https://raw.githubusercontent.com/IMTEmil/ceremapp/main/cerema_icon2.ico", layout="wide")
+df_deflexion_file = st.file_uploader("Veuillez charger le fichier CSV à visualiser.", type=["csv"], accept_multiple_files=False)
+
 
 st.subheader("Define a custom colorscale")
 df = px.data.iris()
