@@ -1,6 +1,9 @@
 import plotly.express as px
 import streamlit as st
 
+t.set_page_config(page_title="Interface", page_icon="https://raw.githubusercontent.com/IMTEmil/ceremapp/main/cerema_icon2.ico", layout="wide")
+
+
 st.subheader("Define a custom colorscale")
 df = px.data.iris()
 fig = px.scatter(
