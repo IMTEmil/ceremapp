@@ -13,7 +13,7 @@ class Csvfile:
 
         self.uploadedfile = uploaded_file
 
-        self.df = pd.read_csv(uploaded_file, csv_separator)
+        self.df = pd.read_csv(uploaded_file, sep = csv_separator)
 
         self.step = self.df["step"].iloc[0]
         self.xmin = self.df["xmin"].iloc[0]
