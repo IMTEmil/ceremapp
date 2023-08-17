@@ -126,7 +126,7 @@ def display3D_figure(csvfile : Csvfile):
 
 st.set_page_config(page_title = "CEREM-APP", page_icon = "https://raw.githubusercontent.com/IMTEmil/ceremapp/main/cerema_icon2.ico", layout = "wide")
 
-st.markdown("<h1 style='text-align: center;'>Bienvenue sur l'outil de visualisation de MELBA</h1>", unsafe_allow_html=True)
+st.markdown("<h1 style='text-align: center;'>Outil de visualisation de MELBA</h1>", unsafe_allow_html=True)
 
 file = st.file_uploader("Veuillez charger le fichier CSV à visualiser ci-dessous.", type = ["csv"], accept_multiple_files=False)
 
