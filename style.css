@@ -1,0 +1,7 @@
+@import url('https://raw.githubusercontent.com/IMTEmil/ceremapp/main/Marianne-Medium.otf');
+
+html, body, [class*="css"] {
+    font-family: 'Marianne', sans-serif; 
+    font-size: 18px;
+    font-weight: 500;
+}
