@@ -147,6 +147,8 @@ def display3D_figure(csvfile : Csvfile):
     st.plotly_chart(fig, autosize = True, use_container_width = True)    
         
 
+st.markdown(css, unsafe_allow_html=True)
+
 st.set_page_config(page_title = "CEREM-APP", page_icon = "https://raw.githubusercontent.com/IMTEmil/ceremapp/main/cerema_icon2.ico", layout = "wide")
 
 st.markdown("<h1 style='text-align: center;'>Outil de visualisation de MELBA</h1>", unsafe_allow_html=True)
