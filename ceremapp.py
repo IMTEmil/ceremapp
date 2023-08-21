@@ -1,4 +1,3 @@
-from typing import List
 import streamlit as st
 import plotly.express as px
 import pandas as pd
@@ -10,38 +9,21 @@ csv_separator = ";"
 
 css = """
 <style>
-body {
-    background-color: #f5f5f5;
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    color: #292574; /* Text color */
-}
-.container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-    box-sizing: border-box;
-    border: 1px solid #ccc;
-    background-color: #fff;
-}
-h1, h2, h3, h4, h5, h6 {
-    color: #ef7757; /* Title color */
+div {
+    color: #292574;
 }
 </style>
 """
 
-custom_font_css = """
-@font-face {
-    font-family: 'Marianne';
-    src: url('https://github.com/IMTEmil/ceremapp/blob/fd6573a5683f046a9aa4b1a6fdf01e3f0a28a291/Marianne-Medium.otf') format('otf');
-    font-weight: normal;
-    font-style: normal;
+title_css = """
+<style>
+.custom-title {
+    color: #ef7757;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
 }
-
-body {
-    font-family: 'Marianne', Arial, sans-serif;
-}
+</style>
 """
 
 class Csvfile:
@@ -67,10 +49,10 @@ class Csvfile:
     def get_minv(self) -> float:
         return self.df.values.min()
     
-    def get_x_coordinates(self) -> List[float]:
+    def get_x_coordinates(self) :
         return [self.xmin + i * self.step for i in range(self.df.shape[1])]
     
-    def get_y_coordinates(self) -> List[float]:
+    def get_y_coordinates(self) :
         return [self.ymin + i * self.step for i in range(self.df.shape[0])]
     
     def get_filename(self) -> str :
@@ -159,11 +141,17 @@ def display3D_figure(csvfile : Csvfile):
     fig.update_layout(title = 'Vue 3D de ' + csvfile.name, height = 1000, margin = dict(l=300, r=300, t=40, b=20))
     st.plotly_chart(fig, autosize = True, use_container_width = True)    
         
-st.markdown(f"<style>{custom_font_css}</style>", unsafe_allow_html=True)
 
 st.set_page_config(page_title = "CEREM-APP", page_icon = "https://raw.githubusercontent.com/IMTEmil/ceremapp/main/cerema_icon2.ico", layout = "wide")
 
-st.markdown("<h1 style='text-align: center;'>Outil de visualisation de MELBA</h1>", unsafe_allow_html=True)
+st.image("https://raw.githubusercontent.com/IMTEmil/ceremapp/main/LogosRF%2BCerema_horizontal.png", output_format="PNG", width=500)
+
+st.markdown(css, unsafe_allow_html=True)
+
+with open( "style.css" ) as css:
+    st.markdown( f'<style>{css.read()}</style>' , unsafe_allow_html= True)
+
+st.markdown("<p style='color: #ef7757; text-align: center;font-size: 50px; font-weight: bold;margin-bottom: 20px;'>Bienvenue sur l'outil de visualisation de MELBA</h1>", unsafe_allow_html=True)
 
 file = st.file_uploader("Veuillez charger le fichier CSV à visualiser ci-dessous.", type = ["csv"], accept_multiple_files=False)
 
