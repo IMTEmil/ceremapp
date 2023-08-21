@@ -31,6 +31,19 @@ h1, h2, h3, h4, h5, h6 {
 </style>
 """
 
+custom_font_css = """
+@font-face {
+    font-family: 'Marianne';
+    src: url('https://github.com/IMTEmil/ceremapp/blob/fd6573a5683f046a9aa4b1a6fdf01e3f0a28a291/Marianne-Medium.otf') format('otf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    font-family: 'Marianne', Arial, sans-serif;
+}
+"""
+
 class Csvfile:
     def __init__(self, uploaded_file) :
 
@@ -146,6 +159,7 @@ def display3D_figure(csvfile : Csvfile):
     fig.update_layout(title = 'Vue 3D de ' + csvfile.name, height = 1000, margin = dict(l=300, r=300, t=40, b=20))
     st.plotly_chart(fig, autosize = True, use_container_width = True)    
         
+st.markdown(f"<style>{custom_font_css}</style>", unsafe_allow_html=True)
 
 st.markdown(css, unsafe_allow_html=True)
 
