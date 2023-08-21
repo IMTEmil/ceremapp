@@ -148,7 +148,7 @@ st.image("https://raw.githubusercontent.com/IMTEmil/ceremapp/main/LogosRF%2BCere
 
 st.markdown(css, unsafe_allow_html=True)
 
-with open( "style.css" ) as css:
+with open( "https://raw.githubusercontent.com/IMTEmil/ceremapp/main/style.css" ) as css:
     st.markdown( f'<style>{css.read()}</style>' , unsafe_allow_html= True)
 
 st.markdown("<p style='color: #ef7757; text-align: center;font-size: 50px; font-weight: bold;margin-bottom: 20px;'>Bienvenue sur l'outil de visualisation de MELBA</h1>", unsafe_allow_html=True)
