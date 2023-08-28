@@ -138,7 +138,7 @@ def display3D_figure(csvfile : Csvfile):
 
     fig = go.Figure(data=[go.Surface(z = Z, x = x, y = y, colorscale="Plasma")])
 
-    fig.update_layout(title = 'Vue 3D de ' + csvfile.name, height = 1000, margin = dict(l=300, r=300, t=40, b=20))
+    fig.update_layout(title = 'Vue 3D de ' + csvfile.name, height = 600, margin = dict(l=300, r=300, t=40, b=20))
     st.plotly_chart(fig, autosize = True, use_container_width = True)    
         
 
